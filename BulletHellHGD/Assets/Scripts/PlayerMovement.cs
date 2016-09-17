@@ -13,6 +13,16 @@ public class PlayerMovement : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "Enemy") { 
+			dieAndRespawn ();
+		}
+	}
+
+		void dieAndRespawn(){
+			transform.position = new Vector3(0,0,0);
+		}
+
 	void FixedUpdate()
 	{
 		float moveHorizontal = Input.GetAxis ("Horizontal");
