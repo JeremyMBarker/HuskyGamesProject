@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BulletCollector : MonoBehaviour {
 
-	
-    void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(other.gameObject.transform.parent.gameObject);
     }
