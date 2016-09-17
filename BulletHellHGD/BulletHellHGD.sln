@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletHellHGD.CSharp", "BulletHellHGD.CSharp.csproj", "{D0122A27-7047-559A-8E5E-B19BEB628908}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{0E5C55B3-0BA1-03E7-0D9D-C121D4AF9918}") = "BulletHellHGD", "Assembly-CSharp.csproj", "{418E913A-0F6E-AD35-5F62-2B5E51BC713B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0122A27-7047-559A-8E5E-B19BEB628908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0122A27-7047-559A-8E5E-B19BEB628908}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0122A27-7047-559A-8E5E-B19BEB628908}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0122A27-7047-559A-8E5E-B19BEB628908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418E913A-0F6E-AD35-5F62-2B5E51BC713B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418E913A-0F6E-AD35-5F62-2B5E51BC713B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418E913A-0F6E-AD35-5F62-2B5E51BC713B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418E913A-0F6E-AD35-5F62-2B5E51BC713B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

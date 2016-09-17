@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Enemy") { 
+		if (other.gameObject.tag == "Enemy") {
 			dieAndRespawn ();
 		}
 	}
