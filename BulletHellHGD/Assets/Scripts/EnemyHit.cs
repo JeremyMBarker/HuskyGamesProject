@@ -11,7 +11,7 @@ public class EnemyHit : MonoBehaviour {
             Destroy(other.gameObject.transform.parent.gameObject);
         }
         else{
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
         if (health <= 0)
         {

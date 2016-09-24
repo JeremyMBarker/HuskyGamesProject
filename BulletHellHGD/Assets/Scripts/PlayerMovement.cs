@@ -7,20 +7,29 @@ public class PlayerMovement : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	private float playerSpeed;
-
+    public int pHealth = 3;
 	void Start()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Enemy") {
-			dieAndRespawn ();
+		if (other.gameObject.tag == "enemy") {
+            
+            dieAndRespawn ();
 		}
 	}
 
 		void dieAndRespawn(){
-			transform.position = new Vector3(0,0,0);
+        pHealth = pHealth-1;
+        if (pHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
 		}
 
 	void FixedUpdate()
