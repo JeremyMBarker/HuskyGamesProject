@@ -66,9 +66,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyHit.cs" />
+    <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
+    <Compile Include="Assets\Scripts\BasicAIMovement.cs" />
     <Compile Include="Assets\Scripts\BulletCol.cs" />
     <Compile Include="Assets\Scripts\BulletCollector.cs" />
+    <Compile Include="Assets\Scripts\EnemyHit.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
