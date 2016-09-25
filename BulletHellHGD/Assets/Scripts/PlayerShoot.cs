@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour {
 	
 	void Update () {
 	
-       if (Input.GetButton("Jump") && Time.time > nextFire)  {
+       if (Input.GetKey(KeyCode.Z) && Time.time > nextFire)  {
 
             nextFire = Time.time + fireRate;
             Instantiate(Shot, BulletSpawn.position, BulletSpawn.rotation);
