@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
+     <Compile Include="Assets\Scripts\BasicAIMovement.cs" />
      <Compile Include="Assets\Scripts\BulletCol.cs" />
      <Compile Include="Assets\Scripts\BulletCollector.cs" />
      <Compile Include="Assets\Scripts\EnemyHit.cs" />
