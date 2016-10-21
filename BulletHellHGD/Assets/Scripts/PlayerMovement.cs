@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.tag == "enemy")
+		if (other.gameObject.tag == "enemy" || other.gameObject.tag == "e_Bullet")
 			dieAndRespawn ();
 	}
 

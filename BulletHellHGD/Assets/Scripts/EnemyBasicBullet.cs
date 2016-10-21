@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBullet : MonoBehaviour
-{
+public class EnemyBasicBullet : MonoBehaviour {
 
-    // Use this for initialization
     public float bSpeed;
     private Rigidbody2D rb2d;
 
     void Start()
     {
-
+        var pos = GameObject.Find("Player").transform.position;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         if (rb2d != null)
         {
-            rb2d.AddForce(transform.up * bSpeed);
+            rb2d.velocity = (pos - transform.position).normalized * bSpeed;
 
         }
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-
-    }
+    void Update () {
+	
+	}
 }
