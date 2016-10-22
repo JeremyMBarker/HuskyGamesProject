@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class EnemyShoot : MonoBehaviour {
-
+    private int shotCount;
+    public int shotsBeforeAOE;
+    public int numShotsAOE;
     public GameObject Shot;
     public Transform BulletSpawn;
     public float fireRate;
@@ -12,7 +14,7 @@ public class EnemyShoot : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        shotCount = 0;
 
     }
 
@@ -23,8 +25,23 @@ public class EnemyShoot : MonoBehaviour {
 
         if (Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
-            GameObject shoot = (GameObject) Instantiate(Shot, BulletSpawn.position, BulletSpawn.rotation);
+
+            if (shotCount >= shotsBeforeAOE && shotsBeforeAOE != 0)
+            {
+                AOE();
+                nextFire = Time.time + fireRate;
+                shotCount = 0;
+            }
+            else
+            {
+                nextFire = Time.time + fireRate;
+                GameObject shoot = (GameObject)Instantiate(Shot, BulletSpawn.position, BulletSpawn.rotation);
+            }
         }
+    }
+
+    void AOE()
+    {
+    
     }
 }
