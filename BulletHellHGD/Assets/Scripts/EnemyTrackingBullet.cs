@@ -3,46 +3,62 @@ using System.Collections;
 
 public class EnemyTrackingBullet : MonoBehaviour
 {
- 
-    private bool stopTrack = false;
-    public float bSpeed;
+    private bool stopTrack = false; 
+        //If True, bullet will continue to track  players current position.
+    private float bSpeed;
+        //Speed of the tracking bullet.
     private Rigidbody2D rb2d;
-    private Vector2 initVeloc;
-
+    public float trackingTime;
+        //How long the bullet should track the player. After the time it will continue in a straight path.
+    private float startTime; 
+        //Holds value of when tracking began.
     void Start()
     {
-        var pos = GameObject.Find("Player").transform.position;
-        rb2d = gameObject.GetComponent<Rigidbody2D>();
-        if (rb2d != null)
+        bSpeed = gameObject.GetComponent<BulletInfo>().bulletSpeed;
+            //Get the bullet speed from it's BulletInfo script.
+        if (GameObject.Find("Player") != null)
         {
-            rb2d.velocity = (pos - transform.position).normalized * bSpeed;
-            initVeloc = rb2d.velocity;
+            //If there is a player still, find it's position.
+            var pos = GameObject.Find("Player").transform.position;
+            rb2d = gameObject.GetComponent<Rigidbody2D>();
+            if (rb2d != null)
+            {
+                //Set the bulelts velocity in the direction of the player's position.
+                rb2d.velocity = (pos - transform.position).normalized * bSpeed;
 
+            }
+            //Get time when tracking started.
+            startTime = Time.time;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (stopTrack)
+            //If We have no player, or tracking is over, let the bullet continue to forward.
+        if (stopTrack || GameObject.Find("Player") == null)
         {
-            rb2d.velocity = initVeloc;
+            //Do nothing.
         }
         else
         {
+            //Get the players current position
             var pos = GameObject.Find("Player").transform.position;
-   
 
-            if(transform.position.y <= pos.y)
+            //Check if tracking is still going.
+            if (Time.time > (startTime + trackingTime))
             {
                 stopTrack = true;
             }
-            else { }
-            rb2d = gameObject.GetComponent<Rigidbody2D>();
-            if (rb2d != null)
+            else
             {
-                rb2d.velocity = (pos - transform.position).normalized * bSpeed;
+                //Tracking is still going, set the bullets velocity towards the player's position.
+                rb2d = gameObject.GetComponent<Rigidbody2D>();
+                if (rb2d != null)
+                {
+                    rb2d.velocity = (pos - transform.position).normalized * bSpeed;
 
+                }
             }
         }
     

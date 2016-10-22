@@ -22,8 +22,15 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.tag == "enemy" || other.gameObject.tag == "e_Bullet")
-			dieAndRespawn ();
+        if (other.gameObject.tag == "enemy" || other.gameObject.tag == "e_Bullet")
+        {
+            //Destroy the bullet object when it hits the player.
+            if (other.gameObject.tag == "e_Bullet")
+            {
+                Destroy(other.gameObject);
+            }
+            dieAndRespawn();
+        }
 	}
 
 	void dieAndRespawn ()

@@ -3,17 +3,39 @@ using System.Collections;
 
 public class EnemyBasicBullet : MonoBehaviour {
 
-    public float bSpeed;
+    private float bSpeed;
+        //Speed of the bullet.
     private Rigidbody2D rb2d;
+        //The bullets rigidbody2D.
 
     void Start()
     {
-        var pos = GameObject.Find("Player").transform.position;
+        bSpeed = gameObject.GetComponent<BulletInfo>().bulletSpeed;
+            //Get bullet speed from BulletInfo Script.
         rb2d = gameObject.GetComponent<Rigidbody2D>();
-        if (rb2d != null)
+          
+        //Check that the player is still alive
+        if (GameObject.Find("Player") != null)
         {
-            rb2d.velocity = (pos - transform.position).normalized * bSpeed;
+            //Get the players current position.
+            var pos = GameObject.Find("Player").transform.position;
 
+            if (rb2d != null)
+            {
+                //Assuming this bullets rigidbody isn't null, set its velocity towards the detected player position.
+                rb2d.velocity = (pos - transform.position).normalized * bSpeed;
+
+            }
+        }
+        else
+        {
+            
+            if (rb2d != null)
+            {
+                //If player is dead, simply shoot forward.
+                rb2d.velocity = transform.up * bSpeed;
+
+            }
         }
     }
 
