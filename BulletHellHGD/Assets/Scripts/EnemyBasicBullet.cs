@@ -33,7 +33,7 @@ public class EnemyBasicBullet : MonoBehaviour {
             if (rb2d != null)
             {
                 //If player is dead, simply shoot forward.
-                rb2d.velocity = transform.up * bSpeed;
+				rb2d.velocity = transform.up* -bSpeed;
 
             }
         }
