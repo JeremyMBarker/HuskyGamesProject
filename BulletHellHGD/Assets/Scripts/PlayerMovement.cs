@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 			transform.position = new Vector3 (0, 0, 0);
 	}
 
+   
 	void FixedUpdate ()
 	{
 		float moveHorizontal = Input.GetAxis ("Horizontal");
