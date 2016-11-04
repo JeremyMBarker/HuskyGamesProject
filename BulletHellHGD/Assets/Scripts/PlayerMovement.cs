@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 		if (pHealth <= 0)
 			Destroy (this.gameObject);
 		else
-			transform.position = new Vector3 (0, 0, 0);
+			transform.position = new Vector3 ((float)-2.5, (float)-3, 0);
 	}
 
 	void FixedUpdate ()
