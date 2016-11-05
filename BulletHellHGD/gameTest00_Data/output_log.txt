@@ -2,9 +2,9 @@ Mono path[0] = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/Bul
 Mono path[1] = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data/Mono'
 Mono config path = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55081
-Multi-casting "[IP] 141.219.230.252 [Port] 55081 [Flags] 2 [Guid] 2225727738 [EditorId] 3383284342 [Version] 1048832 [Id] WindowsPlayer(Natsume) [Debug] 0" to [225.0.0.222:54997]...
-PlayerConnection already initialized - listening to [141.219.230.252:55081]
+PlayerConnection initialized network socket : 0.0.0.0 55193
+Multi-casting "[IP] 141.219.230.252 [Port] 55193 [Flags] 2 [Guid] 3211700569 [EditorId] 4187595952 [Version] 1048832 [Id] WindowsPlayer(Natsume) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [141.219.230.252:55193]
 Initialize engine version: 5.4.0f3 (a6d8d714de6f)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -23,21 +23,53 @@ Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\
 Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.110 seconds
+- Completed reload, in  0.079 seconds
 Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.894521 ms
+UnloadTime: 0.865309 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.151039 ms
+System memory in use before: 16.1 MB.
+System memory in use after: 16.1 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 325.
+Total: 0.328438 ms (FindLiveObjects: 0.018158 ms CreateObjectMapping: 0.016974 ms MarkObjects: 0.288173 ms  DeleteObjects: 0.004737 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.575951 ms
+System memory in use before: 16.1 MB.
+System memory in use after: 16.1 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 217.
+Total: 0.818333 ms (FindLiveObjects: 0.070266 ms CreateObjectMapping: 0.024869 ms MarkObjects: 0.671088 ms  DeleteObjects: 0.048555 ms)
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.905344 ms
+UnloadTime: 1.616928 ms
 System memory in use before: 16.2 MB.
 System memory in use after: 16.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 287.
-Total: 0.295278 ms (FindLiveObjects: 0.024080 ms CreateObjectMapping: 0.023290 ms MarkObjects: 0.233301 ms  DeleteObjects: 0.013816 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 325.
+Total: 0.316990 ms (FindLiveObjects: 0.019737 ms CreateObjectMapping: 0.011842 ms MarkObjects: 0.280278 ms  DeleteObjects: 0.004342 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.611874 ms
+System memory in use before: 16.2 MB.
+System memory in use after: 16.2 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 218.
+Total: 0.850703 ms (FindLiveObjects: 0.091189 ms CreateObjectMapping: 0.021711 ms MarkObjects: 0.682141 ms  DeleteObjects: 0.052108 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.546739 ms
+System memory in use before: 16.3 MB.
+System memory in use after: 16.4 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 288.
+Total: 0.230933 ms (FindLiveObjects: 0.016185 ms CreateObjectMapping: 0.012632 ms MarkObjects: 0.191062 ms  DeleteObjects: 0.010263 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1820 -> priority: 1 
+  Thread -> id: 1c84 -> priority: 1 
