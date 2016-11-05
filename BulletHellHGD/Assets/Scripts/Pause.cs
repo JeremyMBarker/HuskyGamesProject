@@ -11,8 +11,11 @@ public class Pause : MonoBehaviour {
 		if (Input.GetKeyDown ("p"))
 			isPaused = !isPaused;
 
-		if(isPaused)
+		if (isPaused)
+		{
 			Time.timeScale = 0;
+			// Do something menu related
+		}
 		else
 			Time.timeScale = 1;
 	}
