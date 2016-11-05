@@ -32,7 +32,35 @@ public class buttonScript : MonoBehaviour {
 
 	public void lockAspect(int level){
 		switch(level){
-			case 1:
+		case 0:
+			//defualt
+			break;
+		case 1:
+			Screen.SetResolution(4096, 2304, true);
+			break;
+		case 2:
+			Screen.SetResolution(3840, 2160, true);
+			break;
+		case 3:
+			Screen.SetResolution(1900, 900, true);
+			break;
+		case 4:
+			Screen.SetResolution(1920, 1080, true);
+			break;
+		case 5:
+			Screen.SetResolution(1440, 900, true);
+			break;
+		case 6:
+			Screen.SetResolution(1366, 768, true);
+			break;
+		case 7:
+			Screen.SetResolution(1280, 800, true);
+			break;
+		case 8: 
+			Screen.SetResolution(1280, 720, true);
+			break;
+		case 9:
+			Screen.SetResolution(1080, 1200, true);
 			break;
 		}
 	}
