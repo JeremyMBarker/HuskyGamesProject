@@ -22,8 +22,15 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.tag == "enemy")
-			dieAndRespawn ();
+        if (other.gameObject.tag == "enemy" || other.gameObject.tag == "e_Bullet")
+        {
+            //Destroy the bullet object when it hits the player.
+            if (other.gameObject.tag == "e_Bullet")
+            {
+                Destroy(other.gameObject);
+            }
+            dieAndRespawn();
+        }
 	}
 
 	void dieAndRespawn ()
@@ -33,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 		if (pHealth <= 0)
 			Destroy (this.gameObject);
 		else
-			transform.position = new Vector3 (0, 0, 0);
+			transform.position = new Vector3 ((float)-2.5, (float)-3, 0);
 	}
 
 	void FixedUpdate ()
