@@ -4,25 +4,33 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour
 {
 
-	//Holds the prefab for a type of bullet/shot.
     public GameObject Shot;
-	//The Transform of the area where bullets from out of the player.
-	public Transform BulletSpawn;
-	//fireRate is the delay between shots, in seconds.
+        //Holds the prefab for a type of bullet/shot.
+    public Transform BulletSpawn;
+        //The Transform of the area where bullets from out of the player.
     public float fireRate;
-	//Tracks what Time.time should be for next shot to have waited fireRate amount of seconds.
-    private float nextFire;
+    //fireRate is the delay between shots, in seconds. 
 
-	// Use this for initialization
-    void Start() { }
+    // The +- between the two bullets in double shot.
+    public float spread = 0.5f;
+
+    private float nextFire;
+        //Tracks what Time.time should be for next shot to have waited fireRate amount of seconds.
+    // Use this for initialization
+    void Start()
+    {
+
+
+    }
+
 
     void Update()
     {
 
         if (Input.GetKey(KeyCode.Z) && Time.time > nextFire)
         {
-            // Z shoots currently a single shot in a straight line.
-            singleShot();
+            // Z shoots 2 shots side by side;
+            doubleShot();
 
         }
         else if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
@@ -32,13 +40,18 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void singleShot()
+    void doubleShot()
     {
         //Simply create a bullet in the forward direction.
-        Instantiate(Shot, BulletSpawn.position, BulletSpawn.rotation);
+        
 
         nextFire = Time.time + fireRate;
-
+        var t1 = BulletSpawn.position;
+        t1.x = t1.x - spread;
+        var t2 = BulletSpawn.position;
+        t2.x = t2.x + spread;
+        Instantiate(Shot, t1, BulletSpawn.rotation);
+        Instantiate(Shot, t2, BulletSpawn.rotation);
     }
             
 

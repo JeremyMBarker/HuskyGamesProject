@@ -60,7 +60,7 @@ public class EnemyShoot : MonoBehaviour {
         //Then rotates an amount to fit that many shots in a 0 - 360 
         // degree radius. Each iteration sets the BulletSpawn to the
         // Proper location, spawns its bullet, then resets BulletSpawn.
-		for (int i = 0; i <= 360; i += (360 / numShotsAOE))
+		for (int i = 0; i <= 360; i = i + (90 / numShotsAOE))
         {            BulletSpawn.transform.Rotate(Vector3.forward * i);
             Object b = Instantiate(AOEShot, BulletSpawn.position, BulletSpawn.rotation);
             BulletSpawn.transform.Rotate(Vector3.forward * -i);
