@@ -24,7 +24,9 @@ public class EnemySpreadShot : MonoBehaviour
 	{
 		initTime = Time.time;
 		// Set spread center when not targeting the player
-		if(!targetPlayer)
+		if (!targetPlayer)
+			BulletSpawn.transform.Rotate (Vector3.forward * spread_center);
+		else
 			BulletSpawn.transform.Rotate (Vector3.forward * spread_center);
 	}
 
@@ -47,7 +49,6 @@ public class EnemySpreadShot : MonoBehaviour
 			else
 			{
 				var p_pos = p.transform; // Valid time to fire another spread.
-
 				if (Time.time >= nextFire)
 				{
 					if (targetPlayer)
