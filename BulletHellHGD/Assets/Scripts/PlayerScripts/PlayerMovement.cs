@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	public float playerSpeed;
 	// number of player live
 	public int pHealth;
-
+    private float initSpeed;
 	private Rigidbody2D rb2d;
 
 	void Start ()
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 		rb2d = GetComponent<Rigidbody2D> ();
 		pHealth = 3;
 		SetPLivesText ();
+        initSpeed = playerSpeed;
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -35,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
 	void dieAndRespawn ()
 	{
-		pHealth -= 1;
+        playerSpeed = initSpeed;
+        gameObject.GetComponent<PlayerShoot>().fireRate = gameObject.GetComponent<PlayerShoot>().initFire;
+
+        pHealth -= 1;
 		SetPLivesText ();
 		if (pHealth <= 0)
 			Destroy (this.gameObject);

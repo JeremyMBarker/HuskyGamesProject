@@ -74,5 +74,6 @@ public class EnemyTrackingBullet : MonoBehaviour
 		else
 			rb2d.velocity = (transform.up * bSpeed);
 	}
+
 }
    
