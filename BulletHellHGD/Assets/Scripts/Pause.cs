@@ -8,7 +8,7 @@ public class Pause : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown ("p"))
+		if (Input.GetKeyDown ("p") || Input.GetKeyDown(KeyCode.Escape))
 			isPaused = !isPaused;
 
 		if (isPaused)
