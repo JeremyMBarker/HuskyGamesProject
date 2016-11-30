@@ -16,6 +16,7 @@ public class Visibility : MonoBehaviour {
 
 		img.sprite = sprt;
 		img.color = color;
+
 		p = transform.GetComponent<Pause>();
 
 		menuIsPaused = (menuPopup)pauseControl.GetComponent<menuPopup>();
