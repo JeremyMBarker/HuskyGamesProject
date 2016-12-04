@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-
         movement = new Vector2(
             speed.x * direction.x,
             speed.y * direction.y);

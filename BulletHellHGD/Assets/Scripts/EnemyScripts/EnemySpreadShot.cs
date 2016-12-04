@@ -62,7 +62,7 @@ public class EnemySpreadShot : MonoBehaviour
 						return; // No need to fire.
 					else if (numShots % 2 > 0)
 					{
-						//Odd number of shots.
+						// Odd number of shots.
 						Instantiate (Shot, BulletSpawn.position, BulletSpawn.rotation);
 						anglePerShot = (spread_angle / (numShots - 1));
 					}

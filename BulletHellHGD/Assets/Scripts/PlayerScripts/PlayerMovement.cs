@@ -4,12 +4,11 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-	// ui text for player lives
 	public Text pLivesText;
-	// player movement speed
+	public Text pScoreText;
 	public float playerSpeed;
-	// number of player live
 	public int pHealth;
+	public int pScore;
 
 	private Rigidbody2D rb2d;
 
@@ -17,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 		pHealth = 3;
+		pScore = 0;
 		SetPLivesText ();
+		SetPScoreText ();
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -52,6 +53,17 @@ public class PlayerMovement : MonoBehaviour
 			rb2d.velocity = (playerSpeed/(float)3 * movement);
 		else
 			rb2d.velocity = (playerSpeed * movement);
+	}
+
+	public void UpdatePlayerScore(int addedValue)
+	{
+		pScore+=addedValue;
+		SetPScoreText();
+	}
+
+	void SetPScoreText ()
+	{
+		pScoreText.text = "" + pScore;
 	}
 
 	void SetPLivesText ()
