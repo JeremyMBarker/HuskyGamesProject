@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyHit : MonoBehaviour
 {
 
-	public PlayerMovement player;
+	public PlayerControl player;
 	public GameManager game_manager;
 	public EnemySpawning enemyManager;
 	public float health;
@@ -18,7 +18,7 @@ public class EnemyHit : MonoBehaviour
 		enemyManager = FindObjectOfType<EnemySpawning> ();
 		spawnPos = enemyManager.getCurrentPosition ();
 
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		game_manager = FindObjectOfType<GameManager> ();
 
 		if (game_manager.GetScore() > 2500)

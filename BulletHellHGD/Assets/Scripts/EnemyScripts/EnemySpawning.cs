@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemySpawning : MonoBehaviour
 {
-	public PlayerMovement player;
+	public PlayerControl player;
 	public GameManager game_manager;
 	public GameObject Enemy_Nurse;
 	public GameObject Enemy_Doctor;
@@ -17,7 +17,7 @@ public class EnemySpawning : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{ 
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		game_manager = FindObjectOfType<GameManager> ();
 		enemyCount = 0;
 		availablePos = new bool[spawnPoints.Length];

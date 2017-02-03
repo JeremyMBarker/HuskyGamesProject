@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 	private int difficultly;
 
 	// have a reference to the player object
-	public PlayerMovement player;
+	public PlayerControl player;
 
 	// Use this for initialization
 	void Start ()
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 		player_lives = 3;
 		hud_lives_text.text = "" + player_lives;
 		hud_level_text.text = "prototype";
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 	}
 
 	/* Method for updating the player's score which is displayed in the HUD
