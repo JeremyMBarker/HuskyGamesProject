@@ -4,7 +4,10 @@ Members:
   Grant Buhl (programmer)
   Michael Glazier (programmer, art)
   Richard Carpenter (programmer)
-  Michael Bandrowski (programmer)
+  Brett Kriz (programmer)
+
+Former Members:
+  Michael Bandrowski
   
   Game:
     Title: Breaking Out Bradley
