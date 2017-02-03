@@ -5,6 +5,7 @@ public class EnemyHit : MonoBehaviour
 {
 
 	public PlayerMovement player;
+	public GameManager game_manager;
 	public EnemySpawning enemyManager;
 	public float health;
 	public int scoreValue;
@@ -16,9 +17,11 @@ public class EnemyHit : MonoBehaviour
 	{
 		enemyManager = FindObjectOfType<EnemySpawning> ();
 		spawnPos = enemyManager.getCurrentPosition ();
-		player = FindObjectOfType<PlayerMovement> ();
 
-		if (player.pScore > 2500)
+		player = FindObjectOfType<PlayerMovement> ();
+		game_manager = FindObjectOfType<GameManager> ();
+
+		if (game_manager.GetScore() > 2500)
 		{
 			health *= 1.5f;
 			scoreValue = (int)(scoreValue*1.5f);
@@ -38,7 +41,7 @@ public class EnemyHit : MonoBehaviour
 		{
 			// If the player hits the enemy, destroy the enenmy.
 			enemyManager.killEnemy (spawnPos);
-			scoreValue = -500; player.UpdatePlayerScore (scoreValue);
+			game_manager.UpdateScore (-500);
 			Destroy (this.gameObject);
 		}
 
@@ -46,7 +49,7 @@ public class EnemyHit : MonoBehaviour
 		if (health <= 0)
 		{
 			enemyManager.killEnemy (spawnPos);
-			player.UpdatePlayerScore (scoreValue);
+			game_manager.UpdateScore (scoreValue);
 			Destroy (this.gameObject);
 		}
 	}

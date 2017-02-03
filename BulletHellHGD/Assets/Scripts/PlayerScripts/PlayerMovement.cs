@@ -4,48 +4,37 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public Text pLivesText;
-	public Text pScoreText;
 	public float playerSpeed;
-	public int pHealth;
-	public int pScore;
+
+	// have a reference to the Game Manager
+	public GameManager game_manager;
 
 	private Rigidbody2D rb2d;
 
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
-		pHealth = 3;
-		pScore = 0;
-		SetPLivesText ();
-		SetPScoreText ();
+		game_manager = FindObjectOfType<GameManager> ();
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
+		// When player collides with an object
         if (other.gameObject.tag == "enemy" || other.gameObject.tag == "e_Bullet")
         {
-            //Destroy the bullet object when it hits the player.
+            // Destroy the bullet object when it hits the player.
             if (other.gameObject.tag == "e_Bullet")
             {
                 Destroy(other.gameObject);
             }
-            dieAndRespawn();
+			game_manager.UpdateLives (-1);
+			Respawn ();
         }
-	}
-
-	void dieAndRespawn ()
-	{
-		pHealth -= 1;
-		SetPLivesText ();
-		if (pHealth <= 0)
-			Destroy (this.gameObject);
-		else
-			transform.position = new Vector3 ((float)-2.5, (float)-3, 0);
 	}
 
 	void FixedUpdate ()
 	{
+		// Get input for player movement
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
@@ -55,19 +44,8 @@ public class PlayerMovement : MonoBehaviour
 			rb2d.velocity = (playerSpeed * movement);
 	}
 
-	public void UpdatePlayerScore(int addedValue)
+	private void Respawn ()
 	{
-		pScore+=addedValue;
-		SetPScoreText();
-	}
-
-	void SetPScoreText ()
-	{
-		pScoreText.text = "" + pScore;
-	}
-
-	void SetPLivesText ()
-	{
-		pLivesText.text = "" + pHealth;
+		transform.position = new Vector3 ((float)-2.5, (float)-3, 0);
 	}
 }

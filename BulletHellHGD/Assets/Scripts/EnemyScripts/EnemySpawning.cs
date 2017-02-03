@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawning : MonoBehaviour
 {
 	public PlayerMovement player;
+	public GameManager game_manager;
 	public GameObject Enemy_Nurse;
 	public GameObject Enemy_Doctor;
 	public float spawnTime = 3f;
@@ -17,6 +18,7 @@ public class EnemySpawning : MonoBehaviour
 	void Start ()
 	{ 
 		player = FindObjectOfType<PlayerMovement> ();
+		game_manager = FindObjectOfType<GameManager> ();
 		enemyCount = 0;
 		availablePos = new bool[spawnPoints.Length];
 		for (int i = 0; i < spawnPoints.Length; i++)
@@ -26,16 +28,20 @@ public class EnemySpawning : MonoBehaviour
 
 	void Spawn ()
 	{
-		if (player.pHealth <= 0f)
+		if (game_manager.GetLives () <= 0f)
 			return;
 		if (enemyCount < spawnPoints.Length)
 		{
 			enemyCount++;
 			// Creates an instance of the enemy at a random spawn point
 			randPos = Random.Range (0, spawnPoints.Length);
-			while(!availablePos[randPos]) // while not an available position
+			while (!availablePos [randPos]) // while not an available position
 			{
-				randPos++; if (randPos == spawnPoints.Length) { randPos = 0; }
+				randPos++;
+				if (randPos == spawnPoints.Length)
+				{
+					randPos = 0;
+				}
 			}
 			availablePos [randPos] = false;
 			if (Random.Range (0, 2) == 0) // random number [0,2)
@@ -45,6 +51,14 @@ public class EnemySpawning : MonoBehaviour
 		}
 	}
 
-	public int getCurrentPosition() { return randPos; }
-	public void killEnemy(int spawnPos) { enemyCount--; availablePos [spawnPos] = true; }
+	public int getCurrentPosition ()
+	{
+		return randPos;
+	}
+
+	public void killEnemy (int spawnPos)
+	{
+		enemyCount--;
+		availablePos [spawnPos] = true;
+	}
 }
