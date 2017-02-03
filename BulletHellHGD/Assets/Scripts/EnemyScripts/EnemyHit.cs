@@ -42,12 +42,21 @@ public class EnemyHit : MonoBehaviour
 			Destroy (this.gameObject);
 		}
 
-		// Out of health points, therefore destroy enenmy.
-		if (health <= 0)
-		{
-			enemyManager.killEnemy (spawnPos);
-			player.UpdatePlayerScore (scoreValue);
-			Destroy (this.gameObject);
-		}
-	}
+        //Out of health points, therefore destroy enenmy.
+        if (health <= 0)
+        {
+            onDeath();
+        }
+    }
+
+
+    void onDeath()
+    {
+        gameObject.GetComponent<PowerUp>().SpawnPowerup(this.transform);
+        enemyManager.killEnemy(spawnPos);
+        player.UpdatePlayerScore(scoreValue);
+        Destroy(this.gameObject);
+
+    }
+
 }
