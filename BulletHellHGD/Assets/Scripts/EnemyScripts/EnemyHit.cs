@@ -4,9 +4,9 @@ using System.Collections;
 public class EnemyHit : MonoBehaviour
 {
 
-	public PlayerControl player;
-	public GameManager game_manager;
-	public EnemySpawning enemyManager;
+	private PlayerControl player;
+	private GameManager game_manager;
+	private EnemySpawning enemyManager;
 	public float health;
 	public int scoreValue;
 
@@ -48,6 +48,9 @@ public class EnemyHit : MonoBehaviour
 		// Out of health points, therefore destroy enenmy.
 		if (health <= 0)
 		{
+			//Trigger power-up spawns
+			gameObject.GetComponent<PowerUp>().SpawnPowerup(this.transform);
+
 			enemyManager.killEnemy (spawnPos);
 			game_manager.UpdateScore (scoreValue);
 			Destroy (this.gameObject);
