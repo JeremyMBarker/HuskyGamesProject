@@ -5,8 +5,8 @@ static class Constants
 {
     public const int SHOTSPEED = 0;
     public const int PLAYERSPEED = 1;
-
-    public const int MAX = 1; // This is our highest static power-up value.
+    public const int SHIELD = 2;
+    public const int MAX = 2; // This is our highest static power-up value.
     
 
 }
@@ -16,6 +16,7 @@ public class PowerUp : MonoBehaviour
 {
     public GameObject SHOTSPEED_POWERUP;
     public GameObject PLAYSERSPEED_POWERUP;
+    public GameObject SHIELD_POWERUP;
     [Range(0f, 100f)]
     public float dropChance; //  % chance to drop a power-up on death.
 
@@ -37,6 +38,9 @@ public class PowerUp : MonoBehaviour
                 break;
             case 1:
                 Instantiate(PLAYSERSPEED_POWERUP, deadEnemy.position, deadEnemy.rotation);
+                break;
+            case 2:
+                Instantiate(SHIELD_POWERUP, deadEnemy.position, deadEnemy.rotation);
                 break;
         }
 
