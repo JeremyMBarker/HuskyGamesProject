@@ -58,5 +58,12 @@ public class GrayScale : MonoBehaviour {
 		}
 	}
 
+	public void setGrayScale(float ramp){
+		grayScale = ramp;
+	}
+	public float getGrayScale(){
+		return grayScale;
+	}
+
 }
 
