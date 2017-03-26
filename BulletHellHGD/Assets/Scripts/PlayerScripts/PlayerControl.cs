@@ -18,15 +18,7 @@ public class PlayerControl : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         game_manager = FindObjectOfType<GameManager>();
     }
-    function Update()
-    {
-        if (!immune) { return; }
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0) // This might need to be == if we want unending immunity
-        {
-            immune = false;
-        }
-    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // When player collides with an object
@@ -53,6 +45,14 @@ public class PlayerControl : MonoBehaviour
             rb2d.velocity = (playerSpeed / (float)3 * movement);
         else
             rb2d.velocity = (playerSpeed * movement);
+
+        if (!immune) { return; }
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0) // This might need to be == if we want unending immunity
+        {
+            immune = false;
+        }
+
     }
 
     private void Respawn()
