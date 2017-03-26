@@ -21,3 +21,4 @@ C:\Users\Richa\OneDrive\Documents\GitHub\HuskyGamesProject\BulletHellHGD\Temp\bi
 C:\Users\Richa\OneDrive\Documents\GitHub\HuskyGamesProject\BulletHellHGD\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\Richa\OneDrive\Documents\GitHub\HuskyGamesProject\BulletHellHGD\obj\Debug\Assembly-CSharp.dll
 C:\Users\Richa\OneDrive\Documents\GitHub\HuskyGamesProject\BulletHellHGD\obj\Debug\Assembly-CSharp.pdb
+C:\Users\glzre_000\Documents\HGD Spring clone\HuskyGamesProject\BulletHellHGD\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
