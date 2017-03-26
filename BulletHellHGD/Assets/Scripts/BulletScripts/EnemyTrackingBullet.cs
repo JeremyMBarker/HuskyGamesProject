@@ -18,7 +18,7 @@ public class EnemyTrackingBullet : MonoBehaviour
 	private Rigidbody2D rb2d;
 	private bool isPlayerAlive;
 
-	public PlayerMovement player;
+	public PlayerControl player;
 
 	// Initialize
 	void Start ()
@@ -27,7 +27,7 @@ public class EnemyTrackingBullet : MonoBehaviour
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
 		// Get the bullet speed from it's BulletInfo script.
 		bSpeed = gameObject.GetComponent<BulletInfo> ().bulletSpeed;
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		isPlayerAlive = true;
 
 		if (Time.time >= initTime + trackDelay)

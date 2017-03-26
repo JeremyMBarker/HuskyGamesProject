@@ -3,32 +3,36 @@ using System.Collections;
 
 public class EnemySpawning : MonoBehaviour
 {
-	public PlayerMovement player;
+	private PlayerControl player;
+	private GameManager game_manager;
 	public GameObject Enemy_Nurse;
 	public GameObject Enemy_Doctor;
 	public float spawnTime = 3f;
 	public Transform[] spawnPoints;
-    public Transform[] MspawnPoints;
+	public Transform[] MspawnPoints;
+    public Transform[] LspawnPoints;
 	private int enemyCount;
 	private int randPos;
 	private bool[] availablePos;
-    public int testing = 1; 
+	public int testing = 0;
+   
 	// Use this for initialization
 	void Start ()
 	{ 
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		enemyCount = 0;
 		availablePos = new bool[spawnPoints.Length];
 		for (int i = 0; i < spawnPoints.Length; i++)
 			availablePos [i] = true; // initially any position is available
-		InvokeRepeating ("Spawn", spawnTime, spawnTime);
+        Invoke("Spawn", 1f);
+        InvokeRepeating ("Spawn", spawnTime, spawnTime);
 	}
 
     void Spawn()
     {
-        if (player.pHealth <= 0f) return;
-      
-            enemyCount++;
+        //if (game_manager.GetLives() <= 0) return;
+
+        enemyCount++;
         if (testing == 0)
         {
             if (enemyCount < spawnPoints.Length)
@@ -37,7 +41,11 @@ public class EnemySpawning : MonoBehaviour
                 randPos = Random.Range(0, spawnPoints.Length);
                 while (!availablePos[randPos]) // while not an available position
                 {
-                    randPos++; if (randPos == spawnPoints.Length) { randPos = 0; }
+                    randPos++;
+                    if (randPos == spawnPoints.Length)
+                    {
+                        randPos = 0;
+                    }
                 }
                 availablePos[randPos] = false;
                 if (Random.Range(0, 2) == 0) // random number [0,2)
@@ -52,7 +60,11 @@ public class EnemySpawning : MonoBehaviour
             randPos = Random.Range(0, MspawnPoints.Length);
             while (!availablePos[randPos]) // while not an available position
             {
-                randPos++; if (randPos == MspawnPoints.Length) { randPos = 0; }
+                randPos++;
+                if (randPos == MspawnPoints.Length)
+                {
+                    randPos = 0;
+                }
             }
             availablePos[randPos] = false;
             if (Random.Range(0, 2) == 0) // random number [0,2)
@@ -60,9 +72,26 @@ public class EnemySpawning : MonoBehaviour
             else
                 Instantiate(Enemy_Doctor, MspawnPoints[randPos].position, MspawnPoints[randPos].rotation);
         }
-         
-	}   
 
-	public int getCurrentPosition() { return randPos; }
-	public void killEnemy(int spawnPos) { enemyCount--; availablePos [spawnPos] = true; }
+
+
+        else if (testing == 2)
+        {
+            enemyCount = enemyCount + 2;
+            Instantiate(Enemy_Nurse, LspawnPoints[0].position, LspawnPoints[0].rotation);
+            Instantiate(Enemy_Nurse, LspawnPoints[1].position, LspawnPoints[1].rotation);
+            Instantiate(Enemy_Doctor, LspawnPoints[2].position, LspawnPoints[2].rotation);
+        }
+        
+    }
+	public int getCurrentPosition ()
+	{
+		return randPos;
+	}
+
+	public void killEnemy (int spawnPos)
+	{
+		enemyCount--;
+		availablePos [spawnPos] = true;
+	}
 }

@@ -4,8 +4,9 @@ using System.Collections;
 public class EnemyHit : MonoBehaviour
 {
 
-	public PlayerMovement player;
-	public EnemySpawning enemyManager;
+	private PlayerControl player;
+	private GameManager game_manager;
+	private EnemySpawning enemyManager;
 	public float health;
 	public int scoreValue;
 
@@ -16,9 +17,11 @@ public class EnemyHit : MonoBehaviour
 	{
 		enemyManager = FindObjectOfType<EnemySpawning> ();
 		spawnPos = enemyManager.getCurrentPosition ();
-		player = FindObjectOfType<PlayerMovement> ();
 
-		if (player.pScore > 2500)
+		player = FindObjectOfType<PlayerControl> ();
+		game_manager = FindObjectOfType<GameManager> ();
+
+		if (game_manager.GetScore() > 2500)
 		{
 			health *= 1.5f;
 			scoreValue = (int)(scoreValue*1.5f);
@@ -38,15 +41,18 @@ public class EnemyHit : MonoBehaviour
 		{
 			// If the player hits the enemy, destroy the enenmy.
 			enemyManager.killEnemy (spawnPos);
-			scoreValue = -500; player.UpdatePlayerScore (scoreValue);
+			game_manager.UpdateScore (-500);
 			Destroy (this.gameObject);
 		}
 
 		// Out of health points, therefore destroy enenmy.
 		if (health <= 0)
 		{
+			//Trigger power-up spawns
+			gameObject.GetComponent<PowerUp>().SpawnPowerup(this.transform);
+
 			enemyManager.killEnemy (spawnPos);
-			player.UpdatePlayerScore (scoreValue);
+			game_manager.UpdateScore (scoreValue);
 			Destroy (this.gameObject);
 		}
 	}
