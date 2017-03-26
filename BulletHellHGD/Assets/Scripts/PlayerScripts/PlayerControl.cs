@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
     public bool immune = false;
     public float playerSpeed;
     float immuneTime; // = 1.125f;
-    float timeLeft;
+    float timeLeft = 0f;
 
     private Rigidbody2D rb2d;
 
