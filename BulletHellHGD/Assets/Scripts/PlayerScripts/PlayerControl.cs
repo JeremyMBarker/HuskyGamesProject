@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     // have a reference to the Game Manager
     public GameManager game_manager;
-    public boolean immune = false;
+    public bool immune = false;
     public float playerSpeed;
     float immuneTime; // = 1.125f;
 
