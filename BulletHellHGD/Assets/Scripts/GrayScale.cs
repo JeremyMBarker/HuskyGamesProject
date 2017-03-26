@@ -57,6 +57,12 @@ public class GrayScale : MonoBehaviour {
 			DestroyImmediate(curMaterial);
 		}
 	}
+	public void setGrayScale(float ramp){
+		grayScale = Mathf.Clamp(grayScale, 0.0f, 1.0f);
+	}
+	public float getRamp(){
+		return grayScale;
+	}
 
 }
 
