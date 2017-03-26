@@ -6,14 +6,34 @@ public class PlayerShoot : MonoBehaviour
 	public GameObject Shot; // Holds the prefab for a type of bullet/ shot
 	public Transform BulletSpawn; // The transform of the area where bullets from out of the player
 	public float fireRate; // FireRate is the delay between shots, in seconds
+    private float initFireRate;
+    private float maxFireRate;
+    public bool poweredUp = false;
+    public float powerUpEnd;
 	public float spread = 0.5f; // The +/- between the two bullets in double shot
 	private float nextFire; // tracks time waited to help calculate next shot
 
 	// Use this for initialization
-	void Start () { }
+	void Start () {
+        initFireRate = fireRate;
+        maxFireRate = fireRate / 2;
+
+    }
 
 	void Update ()
 	{
+        if(fireRate < maxFireRate) //Since fireRate is delay between shots, smaller values mean faster shooting.
+        {
+           fireRate = maxFireRate;
+        }
+
+        if(Time.time >= powerUpEnd)
+        {
+            poweredUp = false;
+            fireRate = initFireRate;
+        }
+
+
 		if (Input.GetKey (KeyCode.Z) && Time.time > nextFire)
 		{
 			// Z shoots 2 shots side by side
