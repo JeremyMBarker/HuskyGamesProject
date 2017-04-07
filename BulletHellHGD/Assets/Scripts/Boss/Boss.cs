@@ -25,12 +25,18 @@ public class Boss : MonoBehaviour {
     public float staggerWaves; // # of waves of bullets per stagger shot
     public float shotsPerSweep;
     private bool firing;
+
+    public AudioClip bossDead;
+    public AudioClip bossShoot;
+    private AudioSource source;
+    public AudioSource externalSource;
     // Use this for initialization
     void Start () {
         firing = false;
         enemyManager = FindObjectOfType<EnemySpawning>();
         game_manager = FindObjectOfType<GameManager>();
         nextFire = Time.time;
+        source = GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,6 +51,8 @@ public class Boss : MonoBehaviour {
         // Out of health points, therefore destroy enenmy.
         if (bossHealth <= 0)
         {
+            externalSource.PlayOneShot(bossDead, 1f);
+            
             game_manager.UpdateScore(scoreValue);
             Destroy(this.gameObject);
         }
@@ -115,6 +123,7 @@ public class Boss : MonoBehaviour {
 
             for (float i = minAngle; i < 0; i = i + anglePerShot)
             {
+                source.PlayOneShot(bossShoot, .1f);
                 BulletSpawnM.transform.Rotate(Vector3.forward * i);
                 Instantiate(Shot, BulletSpawnM.position, BulletSpawnM.rotation);
                 BulletSpawnM.transform.Rotate(Vector3.forward * -i);
@@ -122,6 +131,7 @@ public class Boss : MonoBehaviour {
 
             for (float i = maxAngle; i > 0; i = i - anglePerShot)
             {
+                source.PlayOneShot(bossShoot, .1f);
                 BulletSpawnM.transform.Rotate(Vector3.forward * i);
                 Instantiate(Shot, BulletSpawnM.position, BulletSpawnM.rotation);
                 BulletSpawnM.transform.Rotate(Vector3.forward * -i);
@@ -146,11 +156,11 @@ public class Boss : MonoBehaviour {
 
         for (float i = 0; i < sweepAngle; i = i + anglePerShot)
         {
-     
+            source.PlayOneShot(bossShoot, .1f);
             BulletSpawnR.transform.Rotate(Vector3.forward * i);
             Instantiate(Shot, BulletSpawnR.position, BulletSpawnR.rotation);
             BulletSpawnR.transform.Rotate(Vector3.forward * -i);
-
+            source.PlayOneShot(bossShoot, .1f);
             BulletSpawnL.transform.Rotate(Vector3.forward * -i);
             Instantiate(Shot, BulletSpawnL.position, BulletSpawnL.rotation);
             BulletSpawnL.transform.Rotate(Vector3.forward * i);
@@ -160,11 +170,11 @@ public class Boss : MonoBehaviour {
 
         for (float i = sweepAngle; i > 0; i = i - anglePerShot)
         {
-
+            source.PlayOneShot(bossShoot, .1f);
             BulletSpawnR.transform.Rotate(Vector3.forward * i);
             Instantiate(Shot, BulletSpawnR.position, BulletSpawnR.rotation);
             BulletSpawnR.transform.Rotate(Vector3.forward * -i);
-
+            source.PlayOneShot(bossShoot, .1f);
             BulletSpawnL.transform.Rotate(Vector3.forward * -i);
             Instantiate(Shot, BulletSpawnL.position, BulletSpawnL.rotation);
             BulletSpawnL.transform.Rotate(Vector3.forward * i);
@@ -189,7 +199,7 @@ public class Boss : MonoBehaviour {
             int shotsFired = 0;
             while (shotsFired != 3)
             {
-
+                source.PlayOneShot(bossShoot, .1f);
                 var currentBulletSpawn = bSpawns[r % 3];
                 Instantiate(Shot, currentBulletSpawn.position, currentBulletSpawn.rotation);
                 r++;

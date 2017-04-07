@@ -67,6 +67,10 @@ public class EnemyTrackingBullet : MonoBehaviour
 			if (!stopTrack || isPlayerAlive)
 			{
 				// Get the players current position
+                if(player == null)
+                {
+                    return;
+                }
 				var pos = player.transform.position;
 
 				// Check if tracking is still going.

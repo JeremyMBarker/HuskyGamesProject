@@ -12,11 +12,16 @@ public class PlayerShoot : MonoBehaviour
     public float powerUpEnd;
 	public float spread = 0.5f; // The +/- between the two bullets in double shot
 	private float nextFire; // tracks time waited to help calculate next shot
+    
+
+    public AudioClip shotSound;
+    private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
         initFireRate = fireRate;
         maxFireRate = fireRate / 2;
+        source = GetComponent<AudioSource>();
 
     }
 
@@ -48,8 +53,10 @@ public class PlayerShoot : MonoBehaviour
 
 	void doubleShot ()
 	{
-		// Simply create a bullet in the forward direction
-		nextFire = Time.time + fireRate;
+        source.PlayOneShot(shotSound, .2f);
+        source.PlayOneShot(shotSound, .2f);
+        // Simply create a bullet in the forward direction
+        nextFire = Time.time + fireRate;
 		var t1 = BulletSpawn.position;
 		t1.x = t1.x - spread;
 		var t2 = BulletSpawn.position;
@@ -60,7 +67,9 @@ public class PlayerShoot : MonoBehaviour
 
 	void splitShot ()
 	{
-		nextFire = Time.time + fireRate;
+        source.PlayOneShot(shotSound, .2f);
+        source.PlayOneShot(shotSound, .2f);
+        nextFire = Time.time + fireRate;
 		//Create a bullet +45 degrees, -45degrees, then set the BulletSpawn's rotation back to forwrd.
 		BulletSpawn.transform.Rotate (Vector3.forward * -45);
 		Instantiate (Shot, BulletSpawn.position, BulletSpawn.rotation);
