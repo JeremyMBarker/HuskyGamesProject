@@ -6,7 +6,7 @@ public class EnemyHit : MonoBehaviour
 
 	private PlayerControl player;
 	private GameManager game_manager;
-	private EnemySpawning enemyManager;
+	private NewSpawn enemyManager;
 	public float health;
 	public int scoreValue;
 
@@ -15,8 +15,7 @@ public class EnemyHit : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		enemyManager = FindObjectOfType<EnemySpawning> ();
-		spawnPos = enemyManager.getCurrentPosition ();
+		enemyManager = FindObjectOfType<NewSpawn> ();
 
 		player = FindObjectOfType<PlayerControl> ();
 		game_manager = FindObjectOfType<GameManager> ();
@@ -40,7 +39,7 @@ public class EnemyHit : MonoBehaviour
 		else if (other.gameObject.tag == "Player")
 		{
 			// If the player hits the enemy, destroy the enenmy.
-			enemyManager.killEnemy (spawnPos);
+			enemyManager.KillEnemy();
 			game_manager.UpdateScore (-500);
 			Destroy (this.gameObject);
 		}
@@ -51,7 +50,7 @@ public class EnemyHit : MonoBehaviour
 			//Trigger power-up spawns
 			gameObject.GetComponent<PowerUp>().SpawnPowerup(this.transform);
 
-			enemyManager.killEnemy (spawnPos);
+			enemyManager.KillEnemy ();
 			game_manager.UpdateScore (scoreValue);
 			Destroy (this.gameObject);
 		}
