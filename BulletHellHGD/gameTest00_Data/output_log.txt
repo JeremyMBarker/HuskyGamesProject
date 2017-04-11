@@ -1,0 +1,54 @@
+Mono path[0] = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data/Managed'
+Mono path[1] = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data/Mono'
+Mono config path = 'C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/gameTest00_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55052
+Multi-casting "[IP] 141.219.230.166 [Port] 55052 [Flags] 2 [Guid] 3419016630 [EditorId] 415608728 [Version] 1048832 [Id] WindowsPlayer(Natsume) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55052]
+PlayerConnection already initialized - listening to [0.0.0.0:55052]
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     1136 MB
+    Driver:   10.18.15.4279
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.046 seconds
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\gameTest00_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 5.508838 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.088341 ms
+System memory in use before: 39.5 MB.
+System memory in use after: 39.5 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 676.
+Total: 0.335543 ms (FindLiveObjects: 0.028817 ms CreateObjectMapping: 0.033949 ms MarkObjects: 0.255013 ms  DeleteObjects: 0.009868 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at BasicAIMovement.Start () [0x0001e] in C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\Assets\Scripts\EnemyScripts\BasicAIMovement.cs:36 
+ 
+(Filename: C:/Users/Jeremy M. Barker/Documents/GitHub/HuskyGamesProject/BulletHellHGD/Assets/Scripts/EnemyScripts/BasicAIMovement.cs Line: 36)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2840 -> priority: 1 

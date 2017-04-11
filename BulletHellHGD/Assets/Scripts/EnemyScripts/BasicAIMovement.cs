@@ -33,13 +33,15 @@ public class BasicAIMovement : MonoBehaviour
 		game_manager = FindObjectOfType<GameManager> ();
 
 		// get player position
+		if (game_manager.GetLives () <= 0)
+			return;
 		target = player.transform;
 	}
 	// Update is called once per frame
 	void Update ()
 	{
 		// check if player is alive
-		if (game_manager.GetLives() <= 0)
+		if (game_manager.GetLives () <= 0)
 			return;
 
 		// move toward the player
