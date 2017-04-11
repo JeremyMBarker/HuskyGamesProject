@@ -1,8 +1,8 @@
 +-::Instructions::-------------------------------+
 |                                                | 
-| Lauch BreakingOutBradley.exe to play the game. |
+| Launch BreakingOutBradley.exe to play the game |
 |                                                |
-| Do not remove the Data folder.                 |
+| Do not remove the Data folder                  |
 +------------------------------------------------+
 
 
@@ -26,16 +26,16 @@
 +-::How To Play::--------------------------------+
 |                                                |
 | ==Shooting==                                   |
-| Press & Hold 'x' to shoot forward.             |
-| Press & Hold 'z' for a split shot.             |
+| Press & Hold 'x' to shoot forward              |
+| Press & Hold 'z' for a split shot              |
 |                                                |
 | ==Movement==                                   |
-| Use arrow keys to move.                        |
-| Hold 'Shift' to slow down.                     |
+| Use arrow keys to move                         |
+| Hold 'Shift' to slow down                      |
 |                                                |
 | ==Items==                                      |
-| Enemies will drop items when they die.         |
-| Each item has a different color and letter.    |
+| Enemies will drop items when they die          |
+| Each item has a different color and letter     |
 | :Pink(FR):  -> Increased Fire Rate             |
 | :Yellow(S): -> Shield (Blocks One Hit)         |
 | :Green(M):  -> Increased Movement Speed        |
