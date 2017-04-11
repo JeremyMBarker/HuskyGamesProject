@@ -34,6 +34,8 @@ public class menuPopup : MonoBehaviour
 		label.enabled = false;
 		end_label.enabled = false;
 
+		Time.timeScale = 1;
+		isPaused = false;
 	}
 	
 	// Update is called once per frame
