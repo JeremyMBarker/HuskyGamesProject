@@ -64,7 +64,10 @@ public class GameManager : MonoBehaviour
 
 		// kill player object if health is zero
 		if (player_lives <= 0)
+		{
 			Destroy (player.gameObject);
+			FindObjectOfType<menuPopup> ().EndGame ();
+		}
 	}
 
 	/* Method for obtaining the player's lives which is displayed in the HUD */
