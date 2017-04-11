@@ -17,7 +17,8 @@ public class Shield : MonoBehaviour {
                 Destroy(this.gameObject);
                 return;
             }
-            other.gameObject.GetComponent<PlayerControl>().shield = true;
+			other.gameObject.GetComponent<PlayerControl>().poweredUpShield = true;
+			other.gameObject.GetComponent<PlayerControl>().shield_item.GetComponent<SpriteRenderer> ().enabled = true;
             other.gameObject.GetComponent<PlayerControl>().powerUpEndShield = (Time.time + powerUpDuration);
             other.gameObject.GetComponent<PlayerControl>().poweredUpShield = true;
             Destroy(this.gameObject);

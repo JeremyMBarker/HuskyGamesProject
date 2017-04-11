@@ -9,7 +9,6 @@ public class Visibility : MonoBehaviour
 	public Sprite sprt;
 	private Image img;
 	private Color color;
-	private Pause p;
 	public GameObject pauseControl;
 	private menuPopup menuIsPaused;
 	// Update is called once per frame
@@ -19,8 +18,6 @@ public class Visibility : MonoBehaviour
 
 		img.sprite = sprt;
 		img.color = color;
-
-		p = transform.GetComponent<Pause> ();
 
 		menuIsPaused = (menuPopup)pauseControl.GetComponent<menuPopup> ();
 
@@ -42,6 +39,4 @@ public class Visibility : MonoBehaviour
 		}
 
 	}
-
-
 }
