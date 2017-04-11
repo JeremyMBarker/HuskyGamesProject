@@ -23,7 +23,7 @@ public class BasicAIMovement : MonoBehaviour {
 	private void Start()
 	{
 		target = GameObject.Find("Player").transform;
-		positions = spot.getCurrentPosition();
+		//positions = spot.getCurrentPosition();
 
 	}
 	// Update is called once per frame
@@ -35,7 +35,7 @@ public class BasicAIMovement : MonoBehaviour {
 				transform.position += (target.position - transform.position).normalized
 					* speed * Time.deltaTime;
 		}
-		else if(level == 1)
+		/* else if(level == 1)
 		{
 			if (positions == 0)
 			{
@@ -101,11 +101,10 @@ public class BasicAIMovement : MonoBehaviour {
 					Destroy(this.gameObject);
 				}
 			}
-		}
+		}*/
 		else if(level == 2)
 		{
 
 		}
 	}
-
 }
