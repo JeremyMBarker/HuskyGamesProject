@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicAIMovement : MonoBehaviour {
-
+public class BasicAIMovement : MonoBehaviour
+{
 	public EnemySpawning spot;
-	private Vector3 pos1 = new Vector3(-9, 3, 0);
-	private Vector3 pos2 = new Vector3(4, 3, 0);
+	private Vector3 pos1 = new Vector3 (-9, 3, 0);
+	private Vector3 pos2 = new Vector3 (4, 3, 0);
 	public float speed = .1f;
-	public Transform target;
+	private Transform target;
+	public Transform post_target;
 	public float MaxDist = 5;
 	public float MinDist = 5;
 	public float level = 0;
+
+	private PlayerControl player;
+	private GameManager game_manager;
+	/*
 	public Transform[] TopLeftCorner;
 	public Transform[] TopRightCorner;
 	public Transform[] BottomLeftCorner;
@@ -20,20 +25,29 @@ public class BasicAIMovement : MonoBehaviour {
 	int j = 0;
 	int k = 0;
 	int l = 0; 
-	private void Start()
+	*/
+	private void Start ()
 	{
-		target = GameObject.Find("Player").transform;
-		//positions = spot.getCurrentPosition();
+		// get player reference
+		player = FindObjectOfType<PlayerControl> ();
+		game_manager = FindObjectOfType<GameManager> ();
 
+		// get player position
+		target = player.transform;
 	}
 	// Update is called once per frame
-	void Update()
+	void Update ()
 	{
+		// check if player is alive
+		if (game_manager.GetLives() <= 0)
+			return;
+
+		// move toward the player
 		if (level == 0)
 		{
-			if (Vector3.Distance(transform.position, target.position) >= MinDist)
+			if (Vector3.Distance (transform.position, target.position) >= MinDist)
 				transform.position += (target.position - transform.position).normalized
-					* speed * Time.deltaTime;
+				* speed * Time.deltaTime;
 		}
 		/* else if(level == 1)
 		{
@@ -102,9 +116,14 @@ public class BasicAIMovement : MonoBehaviour {
 				}
 			}
 		}*/
-		else if(level == 2)
+		else if (level == 2)
 		{
 
 		}
+	}
+
+	public void NotifyPlayerDied ()
+	{
+		target = post_target;
 	}
 }
