@@ -19,8 +19,11 @@ public class PlayerControl : MonoBehaviour
 	public float powerUpEndShield;
 	private Rigidbody2D rb2d;
 	private float initSpeed;
+    public float invincibleTime;
+    private float readyForDamage;
+    public bool isInvincible;
 
-	void Start ()
+    void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
 		game_manager = FindObjectOfType<GameManager> ();
@@ -32,6 +35,9 @@ public class PlayerControl : MonoBehaviour
 
 		// set shield info
 		shield_item.GetComponent<SpriteRenderer> ().enabled = false;
+
+        //Set invincible to false
+        isInvincible = false;
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -44,21 +50,37 @@ public class PlayerControl : MonoBehaviour
 			{
 				Destroy (other.gameObject);
 			}
-			//If the player has a shield on, remove shield and damage is nulled.
-			if (poweredUpShield)
+            //If player is set to be invincible, ignore damage.
+            if (isInvincible)
+            {
+                return;
+            }
+            //If the player has a shield on, remove shield and damage is nulled
+            if (poweredUpShield)
 			{
 				shield_item.GetComponent<SpriteRenderer> ().enabled = false;
 				poweredUpShield = false;
 				return;
 			}
-			game_manager.UpdateLives (-1);
+            //Player collision killing enemies is done here, to avoid weird "race conditions" with invincibility.
+            if (other.tag == "enemy")
+            {
+                other.GetComponent<EnemyHit>().contactKillEnemy();
+            }
+            game_manager.UpdateLives (-1);
 			Respawn ();
 		}
 	}
 
 	void FixedUpdate ()
 	{
-		if (playerSpeed > maxSpeed) //Since fireRate is delay between shots, smaller values mean faster shooting.
+        //Check if invincibility is over.
+        if (Time.time >= readyForDamage)
+        {
+            isInvincible = false;
+        }
+
+        if (playerSpeed > maxSpeed) //Since fireRate is delay between shots, smaller values mean faster shooting.
 		{
 			playerSpeed = maxSpeed;
 		}
@@ -93,5 +115,7 @@ public class PlayerControl : MonoBehaviour
 	private void Respawn ()
 	{
 		transform.position = new Vector3 ((float)-2.5, (float)-3, 0);
-	}
+        readyForDamage = Time.time + invincibleTime;
+        isInvincible = true;
+    }
 }
