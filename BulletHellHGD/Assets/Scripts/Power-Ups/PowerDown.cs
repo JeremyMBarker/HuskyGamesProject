@@ -34,6 +34,5 @@ public class PowerDown : MonoBehaviour {
 
         }
         yield return new WaitForSeconds(0);
-
     }
 }

@@ -7,28 +7,28 @@ Direct3D:
     VRAM:     1136 MB
     Driver:   10.18.15.4279
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.035 seconds
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Jeremy M. Barker\Desktop\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.211 seconds
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jeremy M. Barker\Documents\GitHub\HuskyGamesProject\BulletHellHGD\BreakingOutBradleyDemo\BreakingOutBradley_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.320303 ms
+UnloadTime: 3.109111 ms
 The referenced script on this Behaviour (Game Object 'GUI Camera') is missing!
  
 (Filename:  Line: 1754)
@@ -38,28 +38,10 @@ The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
 (Filename:  Line: 1754)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.333171 ms
+UnloadTime: 5.202115 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 679.
-Total: 0.335543 ms (FindLiveObjects: 0.049344 ms CreateObjectMapping: 0.029212 ms MarkObjects: 0.247512 ms  DeleteObjects: 0.007105 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.361517 ms
-
-Unloading 231 unused Assets to reduce memory usage. Loaded Objects now: 347.
-Total: 2.760143 ms (FindLiveObjects: 0.052107 ms CreateObjectMapping: 0.030396 ms MarkObjects: 0.228959 ms  DeleteObjects: 2.447890 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.383704 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 459.
-Total: 0.316990 ms (FindLiveObjects: 0.039080 ms CreateObjectMapping: 0.017764 ms MarkObjects: 0.255013 ms  DeleteObjects: 0.003947 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.568845 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 349.
-Total: 0.736617 ms (FindLiveObjects: 0.116453 ms CreateObjectMapping: 0.041449 ms MarkObjects: 0.531343 ms  DeleteObjects: 0.046186 ms)
+Total: 0.391204 ms (FindLiveObjects: 0.040265 ms CreateObjectMapping: 0.028817 ms MarkObjects: 0.306331 ms  DeleteObjects: 0.009868 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2300 -> priority: 1 
+  Thread -> id: 9e4 -> priority: 1 

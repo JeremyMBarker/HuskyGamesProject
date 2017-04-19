@@ -8,6 +8,13 @@ public class NewSpawn : MonoBehaviour
 	public Transform[] spawnPoints;
 	public GameObject[] enemies;
 
+	// boss stuff
+	public Transform boss_spawn;
+	public GameObject boss_enemy;
+	public float seconds_until_boss;
+	private float start_time;
+	private bool spawned_boss;
+
 	// other useful variables
 	public float time_between_spawn;
 	public int max_enemy_count;
@@ -17,15 +24,27 @@ public class NewSpawn : MonoBehaviour
 	void Start ()
 	{
 		// no enemies at start
-		current_enemy_count = 0; 
+		current_enemy_count = 0;
+		spawned_boss = false;
+
+		// approx. time when enemies stared spawning
+		start_time = Time.time;
 
 		// continuously spawn enemies
-		InvokeRepeating("Spawn", 3f, time_between_spawn);
+		InvokeRepeating ("Spawn", 3f, time_between_spawn);
 	}
 
 	private void Spawn ()
 	{
-		if (current_enemy_count != max_enemy_count)
+		if (!spawned_boss && Time.time - start_time > seconds_until_boss)
+		{
+			// spawn boss and halt spawning other enemies
+			Instantiate (boss_enemy, boss_spawn.position, boss_spawn.rotation);
+			spawned_boss = true;
+			HaltSpawning ();
+		}
+
+		if (current_enemy_count <= max_enemy_count)
 		{
 			// set random spawn point as 'a'
 			int a = Random.Range (0, spawnPoints.Length);
@@ -35,7 +54,7 @@ public class NewSpawn : MonoBehaviour
 
 			// Spawn an enemy
 			current_enemy_count++;
-			Instantiate (enemies[b], spawnPoints [a].position, spawnPoints [a].rotation);
+			Instantiate (enemies [b], spawnPoints [a].position, spawnPoints [a].rotation);
 		}
 	}
 
@@ -44,9 +63,15 @@ public class NewSpawn : MonoBehaviour
 		current_enemy_count--;
 	}
 
-	// destroy this manager which generates enemies
-	public void HaltSpawning()
+	public void KillBoss ()
 	{
+		FindObjectOfType<menuPopup> ().WinGame ();
 		Destroy (this);
+	}
+
+	// destroy this manager which generates enemies
+	public void HaltSpawning ()
+	{
+		max_enemy_count = 1;
 	}
 }

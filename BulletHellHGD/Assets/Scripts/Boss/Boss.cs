@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour {
     public int bossHealth;
     public int scoreValue;
     private GameManager game_manager;
-    private EnemySpawning enemyManager;
+	private NewSpawn enemyManager;
     public GameObject Shot; // Type of shot
     public Transform BulletSpawnL; // The Transform where bullets are instantiated (left side)
     public Transform BulletSpawnR; // The Transform where bullets are instantiated (right side)
@@ -33,7 +33,7 @@ public class Boss : MonoBehaviour {
     // Use this for initialization
     void Start () {
         firing = false;
-        enemyManager = FindObjectOfType<EnemySpawning>();
+		enemyManager = FindObjectOfType<NewSpawn>();
         game_manager = FindObjectOfType<GameManager>();
         nextFire = Time.time;
         source = GetComponent<AudioSource>();
@@ -54,6 +54,7 @@ public class Boss : MonoBehaviour {
             externalSource.PlayOneShot(bossDead, 1f);
             
             game_manager.UpdateScore(scoreValue);
+			enemyManager.KillBoss ();
             Destroy(this.gameObject);
         }
     }

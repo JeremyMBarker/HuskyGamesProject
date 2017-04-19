@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 		hud_score_text.text = "" + player_score;
 		player_lives = 3;
 		hud_lives_text.text = "" + player_lives;
-		hud_level_text.text = "prototype";
 		player = FindObjectOfType<PlayerControl> ();
 	}
 

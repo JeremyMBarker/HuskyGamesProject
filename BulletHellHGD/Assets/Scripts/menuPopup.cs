@@ -10,6 +10,7 @@ public class menuPopup : MonoBehaviour
 	private Button menuReturn;
 	private Text label;
 	private Text end_label;
+	private Text win_label;
 	private bool isPaused = false;
 	private bool gameEnd = false;
 
@@ -31,8 +32,10 @@ public class menuPopup : MonoBehaviour
 		//get menu text
 		label = (Text)GameObject.Find ("menuText").GetComponent<Text> ();
 		end_label = (Text)GameObject.Find ("menu_GameOver").GetComponent<Text> ();
+		win_label = (Text)GameObject.Find ("menu_YouWin").GetComponent<Text> ();
 		label.enabled = false;
 		end_label.enabled = false;
+		win_label.enabled = false;
 
 		Time.timeScale = 1;
 		isPaused = false;
@@ -103,6 +106,21 @@ public class menuPopup : MonoBehaviour
 		revealButton (menuReturn);
 		status = true;
 		end_label.enabled = true;
+		// pause the game
+		Time.timeScale = 0;
+		isPaused = true;
+	}
+
+	public void WinGame ()
+	{
+		// disable esc key
+		gameEnd = true;
+		// revel menu
+		menu.enabled = true;
+		revealButton (quit);
+		revealButton (menuReturn);
+		status = true;
+		win_label.enabled = true;
 		// pause the game
 		Time.timeScale = 0;
 		isPaused = true;

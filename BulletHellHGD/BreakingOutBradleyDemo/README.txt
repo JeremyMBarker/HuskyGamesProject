@@ -68,7 +68,7 @@
 |  -> Programmer                                 |
 |                                                |
 | Brett Kriz                                     |
-|  -> Programmer                                 |
+|  -> "Programmer"                                 |
 |                                                |
 | ==Former Member==                              |
 | Michael Bandrowski                             |
